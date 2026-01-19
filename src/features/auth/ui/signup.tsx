@@ -3,7 +3,7 @@ import { axios } from "@shared/api";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { type ChangeEvent, useState } from "react";
 
 export const SignUp = () => {
   const [form, setForm] = useState({
@@ -13,7 +13,8 @@ export const SignUp = () => {
   });
   const { push } = useRouter();
 
-  const onHandleChange = ({ target }) => {
+  const onHandleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const target = e.target;
     setForm((prev) => ({ ...prev, [target.name]: target.value }));
   };
 
