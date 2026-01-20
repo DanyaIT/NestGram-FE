@@ -7,6 +7,8 @@ export const config = {
 
 export default async function proxy(req: NextRequest) {
   const access_token = req.cookies.get("access_token")?.value;
+  console.log(access_token);
+  console.log(process.env);
 
   if (access_token) {
     const validate = await fetch(`${getBaseUrl()}/auth/validate`, {
