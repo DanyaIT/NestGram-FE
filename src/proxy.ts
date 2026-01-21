@@ -6,8 +6,6 @@ export const config = {
 };
 
 export default async function proxy(req: NextRequest) {
-  console.log(req.cookies);
-
   const access_token = req.cookies.get("access_token")?.value;
 
   if (access_token) {
