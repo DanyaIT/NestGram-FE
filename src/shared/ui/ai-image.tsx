@@ -1,5 +1,7 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
+import { Button } from "@shared/ui";
 
 export function AIImageGenerator() {
   const [prompt, setPrompt] = useState("");
@@ -19,14 +21,14 @@ export function AIImageGenerator() {
         onChange={(e) => setPrompt(e.target.value)}
         className="rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:border-blue-500"
       />
-      <button
+      <Button
         onClick={onGenerate}
         className="bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600"
       >
         Generate
-      </button>
+      </Button>
       {imageUrl && (
-        <img src={imageUrl} alt="AI Result" className="mt-2 rounded-md" />
+        <Image src={imageUrl} alt="AI Result" className="mt-2 rounded-md" />
       )}
     </div>
   );
