@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { axios } from "@shared/api";
 import { useRouter } from "next/navigation";
+import { Button } from "@shared/ui";
+import { Typography } from "@shared/ui/typography";
 
 export const Sidebar = () => {
   const { push } = useRouter();
@@ -13,7 +15,7 @@ export const Sidebar = () => {
   };
 
   return (
-    <aside className="flex flex-col justify-between w-60 p-6 border-r border-gray-200">
+    <aside className="flex flex-col justify-between w-60 p-6 pb-4 border-r border-gray-200 shadow">
       <div className="flex flex-col gap-y-4">
         <h1 className="text-xl font-bold">NestGram</h1>
         <nav className="flex flex-col gap-2">
@@ -44,7 +46,7 @@ export const Sidebar = () => {
         </nav>
       </div>
 
-      <div className="flex items-center justify-between text-center gap-x-4 justif">
+      <div className="flex items-center flex-col text-center gap-y-4">
         <div className="flex items-center gap-2">
           <Image
             src="https://storage.yandexcloud.net/images-bucket-for-nest/c0f5c80f-ce5c-460e-a23f-21de8c3a1fb7"
@@ -53,9 +55,11 @@ export const Sidebar = () => {
             alt="avatar"
             className="rounded-full"
           />
-          <span>Jane Doe</span>
+          <Typography variant="large">Jane Doe</Typography>
         </div>
-        <button onClick={onLogoutHandler}>logout</button>
+        <Button variant="primary" onClick={onLogoutHandler}>
+          <Typography variant="small">Logout</Typography>
+        </Button>
       </div>
     </aside>
   );

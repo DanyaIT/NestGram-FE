@@ -1,13 +1,13 @@
-import { AIImageGenerator } from "@shared";
 import { Sidebar, SearchBar } from "@widgets";
 import { PostCard } from "@entities";
+import { AIImageGenerator } from "@shared/ui";
 
 export default function HomePage() {
   return (
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar />
       <main className="flex-1 p-6 flex gap-6">
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col gap-y-2">
           <SearchBar />
           <div className="flex flex-col gap-4">
             <PostCard
