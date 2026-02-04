@@ -8,7 +8,7 @@ type TypographyProps = {
 
 export const Typography: FC<TypographyProps> = ({
   children,
-  variant = "body",
+  variant = "large",
   className = "",
 }) => {
   const variants: Record<string, string> = {
@@ -18,7 +18,7 @@ export const Typography: FC<TypographyProps> = ({
     h4: "text-xl font-semibold",
     small: "text-sm",
     base: "text-base",
-    large: "test-lg",
+    large: "text-lg",
   };
 
   return <p className={`${variants[variant]} ${className}`}>{children}</p>;

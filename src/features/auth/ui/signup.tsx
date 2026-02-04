@@ -1,5 +1,5 @@
 "use client";
-import { axios } from "@shared/api";
+import { api } from "@shared/api/client";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -22,7 +22,7 @@ export const SignUp = () => {
     try {
       const {
         data: { success },
-      } = await axios.post<{ success: boolean }>("/auth/signup", form);
+      } = await api.post<{ success: boolean }>("/auth/signup", form);
 
       if (success) {
         push("/signin");

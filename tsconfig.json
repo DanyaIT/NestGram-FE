@@ -22,8 +22,10 @@
       "@shared": ["./src/shared"],
       "@shared/*": ["./src/shared/*"],
       "@features": ["./src/features"],
+      "@features/*": ["./src/features/*"],
       "@widgets": ["./src/widgets"],
-      "@entities": ["./src/entities"]
+      "@entities": ["./src/entities"],
+      "@entities/*": ["./src/entities/*"]
     }
   },
   "include": [

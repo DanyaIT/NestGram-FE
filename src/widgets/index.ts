@@ -1,2 +1,3 @@
-export * from "./sidebar";
-export * from "./search-bar";
+export * from "./header";
+export * from "./footer";
+export * from "../shared/ui/search-bar";
